@@ -68,7 +68,7 @@ class TargetEncoder(BaseEstimator):
     """
     Target encoding transformer and base class for Classifications and Regressions problems.
     """
-    def __init__(self, alpha=10, max_unique=30, split=None):
+    def __init__(self, alpha=10, max_unique=30, split_in=None):
         """
 
         :param alpha: float or int, smoothing for generalization.
@@ -84,10 +84,11 @@ class TargetEncoder(BaseEstimator):
                 will encode features by using cross-validation on 3 folds
                 This situation is the best way to avoid overfit, but algorithm will use small data for encode.
         """
-        if split is None:
-            split = [3, 3]
+        if split_in is None:
+            split_in = [3, 3]
+        self.split_in = split_in
 
-        val = validate_input(alpha=alpha, max_unique=max_unique, split=split)
+        val = validate_input(alpha=alpha, max_unique=max_unique, split=split_in)
         self.alpha = val['alpha']
         self.max_unique = val['max_unique']
         self.split = val['split']
