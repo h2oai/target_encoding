@@ -13,7 +13,7 @@ setup(
     include_package_data=True,
     long_description=open(join(dirname(__file__), 'README.md')).read(),
     install_requires=[
-        'numpy==1.16.4',
+        'numpy==1.18.1',
         'scikit-learn==0.21.2',
     ],
     url="https://github.com/KirillTushin/target_encoding",

@@ -150,6 +150,6 @@ pip install target_encoding
 ___
 ```
 Requirements:
-    numpy==1.16.2
-    scikit-learn==0.20.3
+    numpy==1.18.1
+    scikit-learn==0.21.2
 ```
